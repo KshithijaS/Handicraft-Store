@@ -1,10 +1,14 @@
 package com.sprint2.storebackend.controller;
 
+<<<<<<< HEAD
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+=======
+import org.springframework.web.bind.annotation.CrossOrigin;
+>>>>>>> 1298a431c37527deef64a2da96aa1abc3e0dcacd
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +36,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping(value = { "", "/" })
+    @GetMapping
     public @NotNull Iterable<Product> getProducts() {
         return productService.getAllProducts();
     }
