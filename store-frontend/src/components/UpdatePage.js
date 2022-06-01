@@ -82,7 +82,7 @@ const UpdatePage = () => {
         </div>
         <div className="items-center justify-center h-14 w-full my-4">
           <label className="block text-gray-600 text-sm font-normal" id="label">
-            Picture Link
+            Image Link
           </label>
           <input
             type="text"

@@ -56,21 +56,23 @@ export default function Card() {
         <div className="container-fluid overflow-auto">
             <div class="row flex-nowrap">
             {products.map((product) => (
-                    <div className="col-3 card card-block shadow" key={product.id}>
-                        <img className='card-img' src={product.pictureUrl} alt="" />
-                        <h2 className="card-title">{product.name}</h2>  
-                        <h3 className="card-text">Rs.{product.price}</h3>
-                        <button
-                            onClick={(e, id) => editProduct(e, product.id)}
-                            className="btn-primary rounded">
-                            Edit
-                        </button>
-                        <ToastContainer/>
-                        <button
-                            onClick={(e, id) => deleteProduct(e, product.id)}
-                            className="btn-danger rounded">
-                            Delete
-                        </button>
+                    <div className="col-3 card shadow" key={product.id}>
+                        <img className='card-img-top' src={product.pictureUrl} alt="" />
+                        <div className='card-body align-items-stretch flex flex-col'>
+                            <p className="card-title fs-4 fw-bolder">{product.name}</p>  
+                            <p className="card-text fs-5">Rs.{product.price}</p>
+                            <button
+                                onClick={(e, id) => editProduct(e, product.id)}
+                                className="btn-primary rounded mt-auto mb-2">
+                                Edit
+                            </button>
+                            <ToastContainer/>
+                            <button
+                                onClick={(e, id) => deleteProduct(e, product.id)}
+                                className="btn-danger rounded mt-auto">
+                                Delete
+                            </button>
+                        </div>
                     </div>
                 ))
             } 
