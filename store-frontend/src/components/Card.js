@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/slider.css'
+import './css/style.css'
 import { useEffect, useState } from "react";
 import productsService from '../services/Products.Service';
 import { useNavigate } from "react-router-dom";
@@ -53,26 +53,28 @@ export default function Card() {
       };
 
     return (
-        <div className="cards">
+        <div className="container-fluid overflow-auto">
+            <div class="row flex-nowrap">
             {products.map((product) => (
-                    <div className="card" key={product.id}>
-                        <img src={product.pictureUrl} alt="" />
-                        <h2 className="productname">{product.name}</h2>  
-                        <h3 className="price">{product.price}</h3>
+                    <div className="col-3 card card-block shadow" key={product.id}>
+                        <img className='card-img' src={product.pictureUrl} alt="" />
+                        <h2 className="card-title">{product.name}</h2>  
+                        <h3 className="card-text">Rs.{product.price}</h3>
                         <button
                             onClick={(e, id) => editProduct(e, product.id)}
-                            className="btn-primary">
+                            className="btn-primary rounded">
                             Edit
                         </button>
                         <ToastContainer/>
                         <button
                             onClick={(e, id) => deleteProduct(e, product.id)}
-                            className="btn-danger">
+                            className="btn-danger rounded">
                             Delete
                         </button>
                     </div>
                 ))
             } 
+            </div>
       </div>
     )
 }
