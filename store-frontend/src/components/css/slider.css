@@ -23,20 +23,21 @@ body{
   background: #f1f1f1; 
 } */
 .cards .card{
-    width: 15vw;
-    max-height: 50vh;
+    position: relative;
+    width: 400px;
+    max-height: 500px;
     text-align: center;
     border: 1px solid #371B58;
     margin-left: 5px;
     box-shadow: 2px 2px 20px rgba(49, 47, 47, 0.712);
 }
 .cards .card img{
-    width: 15vw;
-    height: 25vh;
+    width: 400px;
+    height: 200px;
 
 }
 .cards .card .productname{
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 900;
     color: #371B58;
 }
