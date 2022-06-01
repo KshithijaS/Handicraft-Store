@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ProductsService from "../services/Products.Service";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdatePage = () => {
   const { id } = useParams();
@@ -12,6 +14,13 @@ const UpdatePage = () => {
     price: "",
     pictureUrl: "",
   });
+
+  const updateNotify = () => {
+      toast.success("Product Updated", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000
+      });
+  }
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -35,6 +44,7 @@ const UpdatePage = () => {
     console.log(product);
     ProductsService.updateProduct(product, id)
       .then((response) => {
+        updateNotify();
         navigate("/");
       })
       .catch((error) => {

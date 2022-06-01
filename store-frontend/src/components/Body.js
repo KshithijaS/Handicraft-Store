@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ProductsService from "../services/Products.Service";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css'
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Body() {
     const [product, setProduct] = useState({
@@ -10,6 +12,14 @@ export default function Body() {
         price: "",
         pictureUrl: "",
     });
+
+    const addNotify = () => {
+        toast.success("Product Added! Please refresh", {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 3000
+        });
+        
+    }
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -20,6 +30,7 @@ export default function Body() {
         e.preventDefault();
         ProductsService.saveProduct(product)
             .then((response) => {
+            addNotify();
             console.log(response);
             })
             .catch((error) => {
