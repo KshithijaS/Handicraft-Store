@@ -59,4 +59,8 @@ public class Product {
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
     }
+
+	
+
+	
 }
