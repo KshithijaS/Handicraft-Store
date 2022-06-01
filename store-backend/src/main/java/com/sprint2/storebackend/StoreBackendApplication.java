@@ -28,6 +28,7 @@ public class StoreBackendApplication {
             productService.save(new Product(8L, "Copper coated Bells/Chimes", 350.00, "https://cdn.shopify.com/s/files/1/0155/8131/collections/BeFunky-collage_2_f517405d-3136-4db9-89f8-35fd11c639c4_480x.jpg?v=1654001934"));
             productService.save(new Product(9L, "Jogi embroidery Cushion covers", 290.00, "https://cdn.shopify.com/s/files/1/0155/8131/collections/BeFunky-collage_4_cd68966e-a848-46fe-9293-bfe0898f0490_480x.jpg?v=1654001932"));
             productService.save(new Product(10L, "Hand printed Kaftans", 1950.00, "https://cdn.shopify.com/s/files/1/0155/8131/collections/BeFunky-collage_1_0b1e6514-cf38-487e-9f34-987cfe4a3f08_480x.jpg?v=1654001933"));
+
         };
     }
 
