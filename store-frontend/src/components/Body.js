@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ProductsService from "../services/Products.Service";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/style.css'
-import {toast, ToastContainer} from 'react-toastify';
+import './css/style.css';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Body() {
@@ -18,7 +18,6 @@ export default function Body() {
             position: toast.POSITION.TOP_RIGHT,
             autoClose: 3000
         });
-        
     }
 
     const handleChange = (e) => {
@@ -32,6 +31,7 @@ export default function Body() {
             .then((response) => {
             addNotify();
             console.log(response);
+            window.location.reload();
             })
             .catch((error) => {
             console.log(error);
@@ -47,6 +47,7 @@ export default function Body() {
             price: "",
             pictureUrl: "",
         });
+        
     };
 
     return (
